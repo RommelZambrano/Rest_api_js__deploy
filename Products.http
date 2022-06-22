@@ -1,0 +1,30 @@
+###
+GET http://localhost:3000/api/products HTTP/1.1
+
+###
+POST http://localhost:3000/api/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Mandarinas",
+    "description": "Fruta",
+    "price": 0.40,
+    "quantity":5 
+}
+
+###
+GET http://localhost:3000/api/products/62b28cf602a5a4e280c2165b HTTP/1.1
+
+###
+DELETE http://localhost:3000/api/products/62b29cf602a5a4e280 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/products/62b28b1dd55b78691d591272 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Kiwi",
+    "description": "Fruta",
+    "price": 0.50,
+    "quantity": 2
+}

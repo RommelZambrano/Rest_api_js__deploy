@@ -1,4 +1,4 @@
-import {Schema, model} from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 const productsSchema = new Schema({
     name: {
@@ -6,7 +6,7 @@ const productsSchema = new Schema({
         required: true,
         trim: true
     },
-    description : {
+    description: {
         type: String,
         required: true,
         trim: true
@@ -33,4 +33,4 @@ const productsSchema = new Schema({
 });
 
 
-export default model('Products',productsSchema)
+export default model('Products', productsSchema)

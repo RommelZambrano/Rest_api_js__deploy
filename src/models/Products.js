@@ -1,36 +1,38 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model } from "mongoose";
 
-const productsSchema = new Schema({
+const productsSchema = new Schema(
+  {
     name: {
-        type: String,
-        required: true,
-        trim: true
+      type: String,
+      required: true,
+      trim: true,
     },
     description: {
-        type: String,
-        required: true,
-        trim: true
+      type: String,
+      required: true,
+      trim: true,
     },
     price: {
-        type: Number,
-        required: true,
-        trim: true
+      type: Number,
+      required: true,
+      trim: true,
     },
     quantity: {
-        type: Number,
-        required: true,
-        trim: true
+      type: Number,
+      required: true,
+      trim: true,
     },
     total: {
-        type: Number,
-        required: true,
-        default: true,
-        trim: true
-    }
-}, {
+      type: Number,
+      required: true,
+      default: true,
+      trim: true,
+    },
+  },
+  {
     versionKey: false,
-    timestamps: true
-});
+    timestamps: true,
+  }
+);
 
-
-export default model('Products', productsSchema)
+export default model("Products", productsSchema);

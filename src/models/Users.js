@@ -1,32 +1,35 @@
-import { Schema, model } from 'mongoose';
-const uniqueValidator = require('mongoose-unique-validator')
+import { Schema, model } from "mongoose";
+const uniqueValidator = require("mongoose-unique-validator");
 
-const usersSchema = new Schema({
+const usersSchema = new Schema(
+  {
     name: {
-        type: String,
-        required: true,
-        trim: true
+      type: String,
+      required: true,
+      trim: true,
     },
     email: {
-        type: String,
-        required: true,
-        trim: true
+      type: String,
+      required: true,
+      trim: true,
     },
     CI: {
-        type: Number,
-        required: true,
-        uniqued: true,
-        trim: true
+      type: Number,
+      required: true,
+      unique: true,
+      trim: true,
     },
     address: {
-        type: Number,
-        required: true,
-        trim: true
+      type: Number,
+      required: true,
+      trim: true,
     },
-}, {
+  },
+  {
     versionKey: false,
-    timestamps: true
-});
+    timestamps: true,
+  }
+);
 
-usersSchema.plugin(uniqueValidator)
-export default model('Users', usersSchema)
+usersSchema.plugin(uniqueValidator);
+export default model("Users", usersSchema);

@@ -20,7 +20,7 @@ const usersSchema = new Schema(
       trim: true,
     },
     address: {
-      type: Number,
+      type: String,
       required: true,
       trim: true,
     },
@@ -32,4 +32,4 @@ const usersSchema = new Schema(
 );
 
 usersSchema.plugin(uniqueValidator);
-export default model("Users", usersSchema);
+export default model("Users", usersSchema, "users");

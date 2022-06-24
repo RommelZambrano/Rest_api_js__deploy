@@ -1,0 +1,29 @@
+GET http://localhost:3000/api/users HTTP/1.1
+
+###
+POST http://localhost:3000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Luis Miguel",
+    "email": "rommel@hotmail.com",
+    "CI": 1752136511,
+    "address": "Cuenca" 
+}
+
+###
+GET http://localhost:3000/api/users/62b53f7651813f23c50d1021 HTTP/1.1
+
+###
+DELETE http://localhost:3000/api/users/62b53f7651813f23c50d1021 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/users/62b546050867653e3ea4e4b2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Antonio Suarez",
+    "email": "suarez@hotmail.com",
+    "CI": 1854215896,
+    "address": "Guayaquill" 
+}

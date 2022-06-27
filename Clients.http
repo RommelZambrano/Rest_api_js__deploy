@@ -1,0 +1,29 @@
+GET http://localhost:8080/api/clients HTTP/1.1
+
+###
+POST http://localhost:8080/api/clients HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Nicolas",
+    "email": "rommel@hotmail.com",
+    "CI": 1754823659,
+    "address": "Cuenca" 
+}
+
+###
+GET http://localhost:8080/api/clients/62b53f7651813f23c50d1021 HTTP/1.1
+
+###
+DELETE http://localhost:8080/api/clients/62b53f7651813f23c50d1021 HTTP/1.1
+
+###
+PUT http://localhost:8080/api/clients/62ba0003a4956546fbbec918 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Luis Suarez",
+    "email": "luis22@hotmail.com",
+    "CI": 1745213695,
+    "address": "Guayaquil" 
+}

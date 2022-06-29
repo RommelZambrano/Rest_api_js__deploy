@@ -1,23 +1,26 @@
 import { Schema, model } from "mongoose";
+const uniqueValidator = require("mongoose-unique-validator");
 
-const invoicesSchema = new Schema(
+const usersSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
       trim: true,
     },
-    products: {
+    email: {
+      type: String,
+      unique: true,
+      required: true,
+      trim: true,
+    },
+    password: {
       type: String,
       required: true,
+      default: true,
       trim: true,
     },
-    IVA: {
-      type: Number,
-      required: true,
-      trim: true,
-    },
-    total: {
+    type: {
       type: Number,
       required: true,
       trim: true,
@@ -25,8 +28,8 @@ const invoicesSchema = new Schema(
   },
   {
     versionKey: false,
-    timestamps: true,
   }
 );
+clientsSchema.plugin(uniqueValidator);
 
-export default model("Invoices", invoicesSchema);
+export default model("Users", usersSchema);

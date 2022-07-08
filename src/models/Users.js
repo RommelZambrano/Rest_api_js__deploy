@@ -17,7 +17,6 @@ const usersSchema = new Schema(
     password: {
       type: String,
       required: true,
-      default: true,
       trim: true,
     },
     type: {
@@ -30,6 +29,6 @@ const usersSchema = new Schema(
     versionKey: false,
   }
 );
-clientsSchema.plugin(uniqueValidator);
+usersSchema.plugin(uniqueValidator);
 
 export default model("Users", usersSchema);

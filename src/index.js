@@ -1,8 +1,7 @@
 import app from './app';
 import './database';
+import config from './config';
 
-
-app.listen(app.get('port'));
-console.log('Server on port', app.get('port'));
-
-
+app.listen(config.PORT, config.HOST, function () {
+    console.log(`Server listening on http://${config.HOST}:${config.PORT}`);
+  });

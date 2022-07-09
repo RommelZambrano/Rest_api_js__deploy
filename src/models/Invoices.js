@@ -7,8 +7,8 @@ const invoicesSchema = new Schema(
       required: true,
       trim: true,
     },
-    products: {
-      type: String,
+    product: {
+      type:'ObjectId',
       required: true,
       trim: true,
     },

@@ -12,6 +12,10 @@ const productsSchema = new Schema(
       required: true,
       trim: true,
     },
+    provider:{
+      type:'ObjectId',
+      required: true,
+    },
     price: {
       type: Number,
       required: true,

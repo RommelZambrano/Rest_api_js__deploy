@@ -3,7 +3,7 @@ import Product from "../models/Products";
 //POST
 export const postProducts = async (req, res) => {
   if (
-    (!req.body.name, !req.body.description, !req.body.price, !req.body.quantity)
+    (!req.body.name, !req.body.description, !req.body.provier , !req.body.price, !req.body.quantity)
   ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
@@ -13,9 +13,10 @@ export const postProducts = async (req, res) => {
     const newProduct = new Product({
       name: req.body.name,
       description: req.body.description,
+      provider: req.body.provider,
       price: req.body.price,
       quantity: req.body.quantity,
-      total: (req.body.total = req.body.price * req.body.quantity),
+      total: (req.body.total = req.body.price * req.body.quantity)
     });
     const productSave = await newProduct.save();
     res.json(productSave);
@@ -76,17 +77,19 @@ export const putProduct = async (req, res) => {
     $set: {
       name: req.body.name,
       description: req.body.description,
+      provider: req.body.provider,
       price: req.body.price,
       quantity: req.body.quantity,
-      total: (req.body.total = req.body.price * req.body.quantity),
+      total: (req.body.total = req.body.price * req.body.quantity)
     },
-  });
+  }); 
   if (!product)
     return res.status(400).json({
       message: `Product with id ${id} does not exist`,
-    });
-  res.json(product);
-  res.json({
-    message: `Product was updated succesfully`,
-  });
+    })
+  else {
+    return res.status(200).json({
+      message: `Product were update succefully `,
+    })
+  };
 };

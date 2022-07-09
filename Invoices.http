@@ -6,9 +6,8 @@ Content-Type: application/json
 
 {
     "name": "Nicolas",
-    "products": "Sandias",
-    "IVA": "12",
-    "total": "20"
+    "product": "62ca0feabdc36d1cb3dc1c6b",
+    "total": 10
 }
 
 

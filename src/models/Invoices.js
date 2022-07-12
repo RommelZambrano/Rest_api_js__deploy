@@ -12,6 +12,11 @@ const invoicesSchema = new Schema(
       required: true,
       trim: true,
     },
+    client: {
+      type:'ObjectId',
+      required: true,
+      trim: true,
+    },
     IVA: {
       type: Number,
       required: true,

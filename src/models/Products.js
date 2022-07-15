@@ -13,8 +13,8 @@ const productsSchema = new Schema(
       trim: true,
     },
     provider:{
-      type:'ObjectId',
-      required: true,
+      type: Schema.Types.ObjectId,
+      ref: "Providers",
     },
     price: {
       type: Number,

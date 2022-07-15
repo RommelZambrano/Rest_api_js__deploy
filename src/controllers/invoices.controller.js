@@ -2,17 +2,28 @@ import Invoice from "../models/Invoices";
 
 //POST
 export const postInvoices = async (req, res) => {
-  if ((!req.body.name, !req.body.products, !req.body.IVA, !req.body.total)) {
+  if (
+    (!req.body.client_ID,
+    !req.body.product_ID,
+    !req.body.quantity,
+    !req.body.price,
+    !req.body.subtotal,
+    !req.body.IVA,
+    !req.body.total)
+  ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
     });
   }
   try {
     const newInvoice = new Invoice({
-      name: req.body.name,
-      product: req.body.product,
-      IVA: (req.body.IVA = 0.12 * req.body.total),
-      total: +req.body.total + +req.body.IVA,
+      client_ID: req.body.client_ID,
+      product_ID: req.body.product_ID,
+      quantity: req.body.quantity,
+      price: req.body.price,
+      subtotal: (req.body.subtotal = req.body.price * req.body.quantity),
+      IVA: (req.body.IVA = 0.12 * req.body.subtotal),
+      total: (req.body.total = +req.body.subtotal + +req.body.IVA),
     });
     const InvoiceSave = await newInvoice.save();
     res.json(InvoiceSave);
@@ -27,7 +38,19 @@ export const postInvoices = async (req, res) => {
 
 export const getAllInvoices = async (req, res) => {
   try {
-    const invoicesGet = await Invoice.find();
+    const invoicesGet = await Invoice.find({})
+      .populate("client_ID", {
+        _id: 0,
+        name: 1,
+        email: 1,
+        CI: 1,
+        address: 1,
+      })
+      .populate("product_ID", {
+        _id: 0,
+        name: 1,
+        description: 1,
+      });
     res.json(invoicesGet);
   } catch (error) {
     res.status(500).json({

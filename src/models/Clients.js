@@ -3,7 +3,7 @@ const uniqueValidator = require("mongoose-unique-validator");
 
 const clientsSchema = new Schema(
   {
-    name: {
+    name_client: {
       type: String,
       required: true,
       trim: true,

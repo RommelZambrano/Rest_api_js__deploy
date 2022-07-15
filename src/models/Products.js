@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const productsSchema = new Schema(
   {
-    name: {
+    name_product: {
       type: String,
       required: true,
       trim: true,
@@ -12,7 +12,7 @@ const productsSchema = new Schema(
       required: true,
       trim: true,
     },
-    provider:{
+    provider_ID:{
       type: Schema.Types.ObjectId,
       ref: "Providers",
     },

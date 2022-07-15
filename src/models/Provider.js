@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const providersSchema = new Schema(
   {
-    nameProvider: {
+    name_provider: {
       type: String,
       required: true,
     },

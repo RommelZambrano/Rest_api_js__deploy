@@ -2,18 +2,26 @@ import { Schema, model } from "mongoose";
 
 const invoicesSchema = new Schema(
   {
-    name: {
-      type: String,
+    client_ID: {
+      type: Schema.Types.ObjectId,
+      ref: "Clients",
+    },
+    product_ID: {
+      type: Schema.Types.ObjectId,
+      ref: "Products",
+    },
+    quantity: {
+      type: Number,
       required: true,
       trim: true,
     },
-    product: {
-      type:'ObjectId',
+    price: {
+      type: Number,
       required: true,
       trim: true,
     },
-    client: {
-      type:'ObjectId',
+    subtotal: {
+      type: Number,
       required: true,
       trim: true,
     },

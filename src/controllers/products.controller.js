@@ -3,7 +3,7 @@ import Product from "../models/Products";
 //POST
 export const postProducts = async (req, res) => {
   if (
-    (!req.body.name, !req.body.description, !req.body.provier , !req.body.price, !req.body.quantity)
+    (!req.body.name, !req.body.description, !req.body.provider , !req.body.price, !req.body.quantity)
   ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
@@ -30,7 +30,11 @@ export const postProducts = async (req, res) => {
 //GET
 export const getAllProducts = async (req, res) => {
   try {
-    const productsGet = await Product.find();
+    const productsGet = await Product.find({}).populate("provider",{
+      nameProvider: 1,
+      city: 1
+    }
+    );
     res.json(productsGet);
   } catch (error) {
     res.status(500).json({

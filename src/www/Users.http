@@ -5,7 +5,7 @@ POST http://localhost:8080/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Rommel",
+    "name_user": "Rommel",
     "email": "rzam@hotmail.com",
     "password": "admin123",
     "type": 1 

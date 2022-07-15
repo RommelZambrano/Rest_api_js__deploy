@@ -6,9 +6,9 @@ POST http://localhost:8080/api/products HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Mandarinas",
+    "name_product": "Mandarinas",
     "description": "Fruta Clemenules",
-    "provider": "62c8db5a810b2e0578120bbb",
+    "provider_ID": "62c8db5a810b2e0578120bbb",
     "price": 0.25,
     "quantity":10
 }

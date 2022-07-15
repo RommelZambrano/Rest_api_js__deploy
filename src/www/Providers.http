@@ -6,7 +6,7 @@ POST http://localhost:8080/api/providers HTTP/1.1
 Content-Type: application/json
 
 {
-    "nameProvider": "Ananke",
+    "name_provider": "Ananke",
     "city": "Quito"
 }
 

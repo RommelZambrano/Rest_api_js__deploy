@@ -2,14 +2,14 @@ import Client from "../models/Clients";
 
 //POST
 export const postClients = async (req, res) => {
-  if ((!req.body.name, !req.body.email, !req.body.CI, !req.body.address)) {
+  if ((!req.body.name_client, !req.body.email, !req.body.CI, !req.body.address)) {
     return res.status(400).send({
       message: `Content cannot be empty`,
     });
   }
   try {
     const newClient = new Client({
-      name: req.body.name,
+      name_client: req.body.name_client,
       email: req.body.email,
       CI: req.body.CI,
       address: req.body.address,
@@ -71,7 +71,7 @@ export const putClient = async (req, res) => {
   const { id } = req.params;
   const client = await Client.findByIdAndUpdate(id, {
     $set: {
-      name: req.body.name,
+      name_client: req.body.name_client,
       email: req.body.email,
       CI: req.body.CI,
       address: req.body.address,

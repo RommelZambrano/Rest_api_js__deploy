@@ -2,14 +2,14 @@ import User from "../models/Users";
 
 //POST
 export const postUsers = async (req, res) => {
-  if ((!req.body.name, !req.body.email, !req.body.password , !req.body.type)) {
+  if ((!req.body.name_user, !req.body.email, !req.body.password , !req.body.type)) {
     return res.status(400).send({
       message: `Content cannot be empty`,
     });
   }
   try {
     const newUser = new User({
-      name: req.body.name,
+      name_user: req.body.name_user,
       email: req.body.email,
       password: req.body.password,
       type: req.body.type,
@@ -71,7 +71,7 @@ export const putUser = async (req, res) => {
   const { id } = req.params;
   const user = await User.findByIdAndUpdate(id, {
     $set: {
-      name: req.body.name,
+      name_user: req.body.name_user,
       email: req.body.email,
       password: req.body.password,
       type: req.body.type,

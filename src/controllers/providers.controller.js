@@ -2,14 +2,14 @@ import Provider from "../models/Provider";
 
 //POST
 export const postProviders = async (req, res) => {
-  if ((!req.body.nameProvider, !req.body.city)) {
+  if ((!req.body.name_provider, !req.body.city)) {
     return res.status(400).send({
       message: `Content cannot be empty`,
     });
   }
   try {
     const newProvider = new Provider({
-      nameProvider: req.body.nameProvider,
+      name_provider: req.body.name_provider,
       city: req.body.city,
 
     });
@@ -74,7 +74,7 @@ export const putProvider = async (req, res) => {
   const { id } = req.params;
   const provider = await Provider.findByIdAndUpdate(id, {
     $set: {
-      nameProvider: req.body.nameProvider,
+      name_provider: req.body.name_provider,
       city: req.body.city,
     },
   });

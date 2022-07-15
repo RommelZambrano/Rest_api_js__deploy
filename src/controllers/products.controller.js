@@ -31,6 +31,7 @@ export const postProducts = async (req, res) => {
 export const getAllProducts = async (req, res) => {
   try {
     const productsGet = await Product.find({}).populate("provider",{
+      _id: 0,
       nameProvider: 1,
       city: 1
     }

@@ -27,6 +27,7 @@ const usersSchema = new Schema(
   },
   {
     versionKey: false,
+    timestamps: true
   }
 );
 usersSchema.plugin(uniqueValidator);

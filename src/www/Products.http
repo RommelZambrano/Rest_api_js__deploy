@@ -8,7 +8,7 @@ Content-Type: application/json
 {
     "name_product": "Mandarinas",
     "description": "Fruta Clemenules",
-    "provider_ID": "62c8db5a810b2e0578120bbb",
+    "provider_ID": "62c8db5a810b2e0578120cba",
     "price": 0.25,
     "quantity":10
 }
@@ -17,7 +17,7 @@ Content-Type: application/json
 GET http://localhost:8080/api/products/62b28cf602a5a4e280c2165b HTTP/1.1
 
 ###
-DELETE http://localhost:8080/api/products/62ca102cbdc36d1cb3dc1c6e HTTP/1.1
+DELETE http://localhost:8080/api/products/62d22d2d776c2be304b130dd HTTP/1.1
 
 ###
 PUT http://localhost:8080/api/products/62ba059c0a1ba57990610445 HTTP/1.1

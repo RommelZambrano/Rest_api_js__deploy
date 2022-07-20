@@ -12,7 +12,7 @@ const productsSchema = new Schema(
       required: true,
       trim: true,
     },
-    provider_ID:{
+    provider_ID: {
       type: Schema.Types.ObjectId,
       ref: "Providers",
     },

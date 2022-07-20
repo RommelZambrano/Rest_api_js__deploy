@@ -2,7 +2,9 @@ import Client from "../models/Clients";
 
 //POST
 export const postClients = async (req, res) => {
-  if ((!req.body.name_client, !req.body.email, !req.body.CI, !req.body.address)) {
+  if (
+    (!req.body.name_client, !req.body.email, !req.body.CI, !req.body.address)
+  ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
     });

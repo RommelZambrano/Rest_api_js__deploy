@@ -2,7 +2,9 @@ import User from "../models/Users";
 
 //POST
 export const postUsers = async (req, res) => {
-  if ((!req.body.name_user, !req.body.email, !req.body.password , !req.body.type)) {
+  if (
+    (!req.body.name_user, !req.body.email, !req.body.password, !req.body.type)
+  ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
     });

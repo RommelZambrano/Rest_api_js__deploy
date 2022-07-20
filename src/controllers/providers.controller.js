@@ -11,7 +11,6 @@ export const postProviders = async (req, res) => {
     const newProvider = new Provider({
       name_provider: req.body.name_provider,
       city: req.body.city,
-
     });
     const ProviderSave = await newProvider.save();
     res.json(ProviderSave);

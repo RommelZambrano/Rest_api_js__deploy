@@ -30,6 +30,6 @@ const usersSchema = new Schema(
     timestamps: true
   }
 );
-usersSchema.plugin(uniqueValidator);
 
+usersSchema.plugin(uniqueValidator);
 export default model("Users", usersSchema);

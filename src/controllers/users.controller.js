@@ -1,23 +1,35 @@
 import User from "../models/Users";
+import jwt from "jsonwebtoken";
+import config from "../config";
 
 //POST
 export const postUsers = async (req, res) => {
   if (
-    (!req.body.name_user, !req.body.email, !req.body.password, !req.body.type)
+    (!req.body.name_user, !req.body.email, !req.body.password)
   ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
     });
   }
   try {
+    const { name_user, email, password } = req.body;
     const newUser = new User({
-      name_user: req.body.name_user,
-      email: req.body.email,
-      password: req.body.password,
-      type: req.body.type,
+      name_user,
+      email,
+      password,
+      type : req.body.type = 1,
     });
     const userSave = await newUser.save();
-    res.json(userSave);
+    const token = jwt.sign({ id: userSave._id }, config.SECRET, {
+      expiresIn: 86400,
+    }); // 24 hours
+    return res.status(200).json({
+      token,
+      _id: userSave._id,
+      name_user: userSave.name_user,
+      email: userSave.email,
+      type: userSave.type,
+    });
   } catch (error) {
     res.status(500).json({
       message: error.message || `Error for creating and post Users`,
@@ -28,7 +40,9 @@ export const postUsers = async (req, res) => {
 //GET
 export const getAllUsers = async (req, res) => {
   try {
-    const usersGet = await User.find();
+    const usersGet = await User.find(
+      
+    );
     res.json(usersGet);
   } catch (error) {
     res.status(500).json({
@@ -41,7 +55,7 @@ export const getAllUsers = async (req, res) => {
 export const getOneUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findById(id);
+    const user = await User.findOne(id);
     if (!user)
       return res.status(400).json({
         message: `User with id ${id} does not exist`,

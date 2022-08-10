@@ -25,10 +25,11 @@
     "@babel/core": "^7.18.5",
     "@babel/node": "^7.18.5",
     "@babel/plugin-transform-runtime": "^7.18.5",
-    "@babel/preset-env": "^7.18.2"
+    "@babel/preset-env": "^7.18.2",
+    "mongoose-unique-validator": "^3.1.0"
   },
   "devDependencies": {
-    "mongoose-unique-validator": "^3.1.0",
+ 
     "nodemon": "^2.0.16"
   }
 }

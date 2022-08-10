@@ -22,7 +22,7 @@ PUT http://localhost:8080/api/clients/62ba0003a4956546fbbec918 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Luis Suarez",
+    "name": "Luis Suareddddqsdz",
     "email": "luis22@hotmail.com",
     "CI": 1745213695,
     "address": "Guayaquil" 

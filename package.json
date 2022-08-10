@@ -20,16 +20,15 @@
     "helmet": "^5.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.0",
-    "morgan": "^1.10.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.5",
     "@babel/node": "^7.18.5",
     "@babel/plugin-transform-runtime": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-    "mongoose-unique-validator": "^3.1.0"
-  },
-  "devDependencies": {
- 
+    "mongoose-unique-validator": "^3.1.0",
     "nodemon": "^2.0.16"
   }
 }
